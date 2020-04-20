@@ -61,7 +61,7 @@ Vue.use(Router)
 let router = new Router({
   mode: 'history',
   // 测试部署
-  base: 'test',
+  // base: 'test',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
