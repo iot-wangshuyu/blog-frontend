@@ -31,6 +31,7 @@ import MyAccountContent from '@/components/content/MyAccountContent'
 import MyBlogContent from '@/components/content/MyBlogContent'
 import MyNoticeContent from '@/components/content/MyNoticeContent'
 import WebNoticeContent from '@/components/content/WebNoticeContent'
+import MyAskContent from '@/components/content/MyAskContent'
 
 import UserInfo from '@/components/views/System/UserInfo'
 import PassWord from '@/components/views/System/PassWord'
@@ -206,6 +207,7 @@ let router = new Router({
             title: '博文归档 | VBlog 创建你自己的博客'
           }
         },
+        // 我的博客
         {
           path: ':userName/home',
           name: 'myHome',
@@ -225,6 +227,16 @@ let router = new Router({
           },
           meta: {
             title: '博文列表 | VBlog 创建你自己的博客'
+          }
+        },
+        // 我的问答
+        {
+          path: ':userName/ask',
+          name: 'myAsk',
+          components: {
+            header: SimpleHeader,
+            content: MyAskContent,
+            footer: CommonFooter
           }
         },
         {

@@ -25,8 +25,9 @@
             </a>
             </p>
             <p class="operate_info">
-                <span class="publish-time"><a><iv-icon type="ios-create" ></iv-icon>  {{ask.createTime}}</a></span>
-                <span class="userName"><a  @click="selectMenu('/'+ask.userName)"><iv-icon type="ios-contact"></iv-icon>  {{ask.userName}}   </a></span>
+                <span class="publish-time"><a><iv-icon type="ios-create" ></iv-icon> {{ask.createTime}}</a></span>
+                <span class="edit" style="float:right"><a @click="editeArticle(ask.id)"><iv-icon type="ios-create-outline"></iv-icon> 编辑</a></span>
+                <span class="del" style="float:right"><a @click="confirm(ask.id)"><iv-icon type="ios-trash"></iv-icon> 删除</a></span>
                 <span class="readings" style="float:right"><a ><iv-icon type="ios-eye-outline"></iv-icon> {{ask.readCount}} 浏览</a></span>
             </p>
           </div>
@@ -47,10 +48,41 @@ export default {
   },
   mixins: [mixin],
   methods: {
+    // 删除
+    del (articleId) {
+      this.$axios.get('/article/del/' + articleId, {
+
+      }).then(({data}) => {
+        if (data && data.code === '000000') {
+          this.$router.go(0)
+        } else {
+          this.$Message.warning(data.msg)
+        }
+      }).catch((error) => {
+        console.log(error.response.data.msg)
+      })
+    },
+    confirm (articleId) {
+      this.$Modal.confirm({
+        title: '提示信息',
+        content: '<p>确定删除该问题吗？</p>',
+        onOk: () => {
+          this.del(articleId)
+        },
+        onCancel: () => {
+          // this.del(articleId)
+        }
+      })
+    },
     selectMenu (url) {
       console.log('url' + url)
       this.$router.push(url)
-      // .catch(data => {})
+    },
+    editeArticle (articleId) {
+      if (articleId) {
+        console.log('this.$route.query' + JSON.stringify(this.$route.query))
+        this.$router.push({path: '/' + this.userName + '/blog', query: {'articleId': articleId}})
+      }
     }
   }
 }

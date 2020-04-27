@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     focusShow () {
-      if (this.loginUser.trim() !== this.userName.trim()) {
+      if (this.loginUser !== this.userName) {
         this.focusIsShow = true
       }
     },

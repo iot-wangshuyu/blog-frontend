@@ -1,6 +1,6 @@
 <template>
   <div class="index-carousel" :style="backgroundDiv" :blogInfo="blogInfo">
-    <!-- <img class="background" src="../../../assets/background.jpg" alt=""> -->
+    <!-- <img class="background" src="../../../assets/8.png" alt=""> -->
     <br>
     <h2 class="name">{{blogInfo.vTitle}}</h2>
     <br>

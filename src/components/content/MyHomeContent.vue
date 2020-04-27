@@ -50,7 +50,7 @@ import About from '@/components/views/About'
 import {treeDataTranslate} from '@/utils'
 import NewArticle from '@/components/views/NewArticle'
 import Archive from '@/components/views/Archive'
-import HomeCarousel from '@/components/views/Carousel/HomeCarousel.vue'
+import HomeCarousel from '@/components/views/Carousel/HomeCarousel'
 import merge from 'lodash/merge' // 合并对象工具
 
 export default {
