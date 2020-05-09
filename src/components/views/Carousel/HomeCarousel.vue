@@ -18,8 +18,6 @@ export default {
         backgroundSize: '100% 100%'
       },
       blogInfo: {
-        vTitle: '王树钰',
-        vIntroduct: '不积跬步无以至千里'
       }
 
     }

@@ -29,7 +29,7 @@
      <iv-row v-if=focusIsShow>
         <iv-col span="12">
            <iv-button v-if=!userInfo.isFocus  @click="focus(userInfo)" type="error" style="width:90%;margin-top:10px">关注</iv-button>
-           <iv-button v-if=userInfo.isFocus @click="cancleFocus(userInfo)" type="Default" style="width:90%;margin-top:10px">已关注</iv-button>
+           <iv-button v-if=userInfo.isFocus @click="cancleFocus(userInfo)" type="default" style="width:90%;margin-top:10px">已关注</iv-button>
         </iv-col>
         <iv-col span="12">
            <iv-button @click="confirm()" type="success" style="width:90%;margin-top:10px" ghost>私信</iv-button>

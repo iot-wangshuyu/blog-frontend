@@ -134,8 +134,6 @@ export default {
       })
     },
     listCategory (userName) {
-      // let params = {}
-      // params.type = 0
       this.$axios.get('/view/article/category/' + userName, {
       }).then(({data}) => {
         if (data && data.code === '000000') {
